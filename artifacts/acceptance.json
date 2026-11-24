@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-11-24T05:33:23.477660+00:00",
+  "status": "PASS",
+  "all_passed": true,
+  "tests_expected": 48,
+  "tests_passed": 48,
+  "checks": {
+    "migration": {
+      "ok": true,
+      "evidence": "alembic upgrade head exit 0"
+    },
+    "pytest": {
+      "ok": true,
+      "evidence": "exit 0; 48 passed"
+    },
+    "matrix_doc": {
+      "ok": true,
+      "evidence": "PERMISSION-MATRIX.md: 11 permission rows"
+    },
+    "registry": {
+      "ok": true,
+      "evidence": "registry OK: 11 permissions, 6 roles, 24 role-permission links"
+    },
+    "ac1_query": {
+      "ok": true,
+      "evidence": "PostgreSQL 16.2; 11 permissions"
+    },
+    "ac1_screenshot": {
+      "ok": true,
+      "evidence": "1400x1000; 72795 B"
+    }
+  },
+  "note": ""
+}

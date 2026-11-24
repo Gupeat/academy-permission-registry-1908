@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>AC1 权限点注册证据</title>
+<style>
+body { font: 15px/1.55 'Segoe UI', 'Microsoft YaHei', sans-serif; color: #172033; margin: 0; background: #f4f7fb; }
+.page { width: 1320px; margin: 36px auto; background: #fff; border: 1px solid #dbe3ef; border-radius: 10px; padding: 30px 36px; box-sizing: border-box; }
+h1 { font-size: 28px; margin: 0 0 6px; }
+.sub { color: #5b6b82; margin: 0 0 22px; }
+.badge { display: inline-block; background: #e8f7ee; color: #126b39; border: 1px solid #b7e4c7; border-radius: 999px; padding: 4px 12px; font-weight: 600; margin-right: 8px; }
+.meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin: 18px 0; color: #334155; }
+.meta b { color: #0f172a; }
+pre { background: #0f172a; color: #dbeafe; padding: 16px 18px; border-radius: 8px; font: 14px/1.55 Consolas, monospace; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+th { text-align: left; background: #eef3fb; color: #334155; padding: 9px 10px; border-bottom: 2px solid #cbd8ea; }
+td { padding: 8px 10px; border-bottom: 1px solid #e5ecf5; font-family: Consolas, monospace; }
+tr:nth-child(even) td { background: #fafcff; }
+.count { font-size: 22px; font-weight: 700; color: #126b39; }
+.note { color: #64748b; font-size: 13px; margin-top: 16px; }
+</style></head><body><div class="page">
+<h1>AC1 迁移执行后权限表 SQL 查询</h1>
+<p class="sub">#1908 学院权限点注册与角色默认映射 · 虚构数据 · 2026-11-24</p>
+<span class="badge">PostgreSQL 16.2</span>
+<span class="badge">已执行 alembic upgrade head</span>
+<div class="meta">
+  <div><b>查询：</b>academy_permissions（未软删除）</div>
+  <div><b>权限点数量：</b><span class="count">11</span></div>
+  <div><b>数据库：</b>真实 PostgreSQL 16 临时实例</div>
+  <div><b>记录：</b>11 个 academy.* 权限点</div>
+</div>
+<pre>SELECT code, name, module
+FROM academy_permissions
+WHERE deleted_at IS NULL
+ORDER BY code</pre>
+<table><thead><tr><th>code</th><th>name</th><th>module</th></tr></thead><tbody><tr><td>academy.application.review</td><td>审核报名</td><td>academy</td></tr><tr><td>academy.course.edit</td><td>编辑课程</td><td>academy</td></tr><tr><td>academy.course.publish</td><td>审批发布课程</td><td>academy</td></tr><tr><td>academy.course.read</td><td>查看课程</td><td>academy</td></tr><tr><td>academy.entitlement.config</td><td>配置学院权益</td><td>academy</td></tr><tr><td>academy.instructor.manage</td><td>管理讲师</td><td>academy</td></tr><tr><td>academy.learning.correct</td><td>补录与更正学习记录</td><td>academy</td></tr><tr><td>academy.review.moderate</td><td>评价隐藏与回复</td><td>academy</td></tr><tr><td>academy.roster.read</td><td>查看报名名单</td><td>academy</td></tr><tr><td>academy.session.manage</td><td>管理课期</td><td>academy</td></tr><tr><td>academy.stats.read</td><td>查看学院统计</td><td>academy</td></tr></tbody></table>
+<p class="note">本图由 scripts/make_ac1_screenshot.py 生成：先启动 PostgreSQL 16 临时实例并执行 Alembic 迁移，再用上述 SQL 查询数据库。</p>
+</div></body></html>

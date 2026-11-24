@@ -1,0 +1,62 @@
+{
+  "sql": "SELECT code, name, module\nFROM academy_permissions\nWHERE deleted_at IS NULL\nORDER BY code",
+  "server_version": "16.2",
+  "count": 11,
+  "rows": [
+    {
+      "code": "academy.application.review",
+      "name": "审核报名",
+      "module": "academy"
+    },
+    {
+      "code": "academy.course.edit",
+      "name": "编辑课程",
+      "module": "academy"
+    },
+    {
+      "code": "academy.course.publish",
+      "name": "审批发布课程",
+      "module": "academy"
+    },
+    {
+      "code": "academy.course.read",
+      "name": "查看课程",
+      "module": "academy"
+    },
+    {
+      "code": "academy.entitlement.config",
+      "name": "配置学院权益",
+      "module": "academy"
+    },
+    {
+      "code": "academy.instructor.manage",
+      "name": "管理讲师",
+      "module": "academy"
+    },
+    {
+      "code": "academy.learning.correct",
+      "name": "补录与更正学习记录",
+      "module": "academy"
+    },
+    {
+      "code": "academy.review.moderate",
+      "name": "评价隐藏与回复",
+      "module": "academy"
+    },
+    {
+      "code": "academy.roster.read",
+      "name": "查看报名名单",
+      "module": "academy"
+    },
+    {
+      "code": "academy.session.manage",
+      "name": "管理课期",
+      "module": "academy"
+    },
+    {
+      "code": "academy.stats.read",
+      "name": "查看学院统计",
+      "module": "academy"
+    }
+  ]
+}
