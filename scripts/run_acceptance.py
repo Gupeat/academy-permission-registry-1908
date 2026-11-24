@@ -19,7 +19,7 @@ from scripts.query_ac1 import query  # noqa: E402
 ARTIFACTS = REPO_ROOT / "artifacts"
 ACCEPTANCE_JSON = ARTIFACTS / "acceptance.json"
 ACCEPTANCE_MD = ARTIFACTS / "ACCEPTANCE.md"
-EXPECTED_TESTS = 48
+EXPECTED_TESTS = 49
 MATRIX = REPO_ROOT / "docs" / "PERMISSION-MATRIX.md"
 
 

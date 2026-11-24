@@ -31,7 +31,7 @@ $env:DATABASE_URL = "postgresql+psycopg2://postgres@127.0.0.1:5432/postgres"
 alembic upgrade head
 ```
 
-所有部署相关值只从环境变量读取（`DATABASE_URL`）；代码中没有数据库口令。
+所有部署相关值只从环境变量读取（`DATABASE_URL` 必填）；代码与 `alembic.ini` 中没有数据库地址或口令。
 
 ## 登录 / S2-IAM 对接点
 
@@ -101,7 +101,7 @@ pytest -q
 python scripts/run_acceptance.py
 ```
 
-当前结果：**48 passed**；`scripts/run_acceptance.py` 使用真实 PostgreSQL 16.2 临时实例执行
+当前结果：**49 passed**；`scripts/run_acceptance.py` 使用真实 PostgreSQL 16.2 临时实例执行
 `alembic upgrade head`、pytest、`check_registry.py`、AC1 SQL 查询与 Edge 截图。
 
 - AC1：`artifacts/AC1-permissions.png`（1400×1000，真实 PG16 查询 11 行权限点）。

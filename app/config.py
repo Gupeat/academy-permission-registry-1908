@@ -6,9 +6,10 @@ from __future__ import annotations
 
 import os
 
-DEFAULT_DATABASE_URL = "postgresql+psycopg2://postgres@127.0.0.1:5432/postgres"
-
 
 def database_url() -> str:
-    """Return the configured database URL, never a hard-coded password."""
-    return os.environ.get("DATABASE_URL", DEFAULT_DATABASE_URL)
+    """Return DATABASE_URL, never a hard-coded host or password."""
+    value = os.environ.get("DATABASE_URL", "").strip()
+    if not value:
+        raise RuntimeError("DATABASE_URL is required; set it to a PostgreSQL 16 URL")
+    return value

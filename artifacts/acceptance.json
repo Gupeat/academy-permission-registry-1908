@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T05:33:23.477660+00:00",
+  "generated_at": "2026-11-24T06:13:48.803864+00:00",
   "status": "PASS",
   "all_passed": true,
-  "tests_expected": 48,
-  "tests_passed": 48,
+  "tests_expected": 49,
+  "tests_passed": 49,
   "checks": {
     "migration": {
       "ok": true,
@@ -11,7 +11,7 @@
     },
     "pytest": {
       "ok": true,
-      "evidence": "exit 0; 48 passed"
+      "evidence": "exit 0; 49 passed"
     },
     "matrix_doc": {
       "ok": true,
